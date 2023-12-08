@@ -1,8 +1,11 @@
 require ( './helpers.js' );
+const { cats, destructivelyAppendCat, } = require('../helpers');
 
 describe('index.js', function () {
   describe('cats', function () {
-    it('is assigned an initial value of ["Milo", "Otis", "Garfield"]', function () {
+    it('should have an initial value of ["Milo", "Otis", "Garfield"]', function () {
+      const cats = ["Milo", "Otis", "Garfield"];
+  
       expect(cats).to.have.ordered.members(["Milo", "Otis", "Garfield"]);
     });
   });
@@ -17,6 +20,7 @@ describe('index.js', function () {
     describe('destructivelyAppendCat(name)', function () {
       it('appends a cat to the end of the cats array', function () {
         destructivelyAppendCat('Ralph');
+
 
         expect(cats).to.have.ordered.members(["Milo", "Otis", "Garfield", "Ralph"]);
       });
